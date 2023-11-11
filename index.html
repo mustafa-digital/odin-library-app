@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library App</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="book.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <section class="sidebar">
+            <section class="sidebar-header">
+                <img class="logo-img" src="images/book-2028193.svg" alt="book logo">
+                <h1 class="logo-title">Library</h1>
+            </section>
+            <section class="sidebar-menu">
+                <div class="add-book-popup">
+                    <div class="add-book-popup-overlay">
+                        <span class="close-btn">&times;</span>
+                    </div>
+                    <div class="add-book-popup-main">
+                        <div class="add-book-popup-form">
+                            <form action="" method="post">
+                                <p>
+                                    <label for="title">Title</label>
+                                    <input type="text"
+                                           id="title"
+                                           name="title"
+                                           required />
+                                    <span></span>
+                                </p>
+
+                                <p>
+                                    <label for="author">Author</label>
+                                    <input type="text"
+                                           id="author"
+                                           name="author"
+                                           required />
+                                    <span></span>
+                                </p>
+
+                                <p>
+                                    <label for="pages">Pages</label>
+                                    <input type="number"
+                                           id="pages"
+                                           name="pages"
+                                           required />
+                                    <span></span>
+                                </p>
+
+                                <p>
+                                    <label for="read">Read</label>
+                                    <input type="checkbox"
+                                           id="read"
+                                           name="read" />
+                                    <span></span>
+                                </p>
+
+                                <button type="submit">Add to Library</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <a class="add-book-btn">
+                    <span class="add-book-icon"></span>
+                    <span class="add-book-text">Add a New Book</span>
+                </a>
+                <a class="stats-btn">
+                    <span class="stats-icon"></span>
+                    <span class="stats-text">My Reading Stats</span>
+                </a>
+                <a class="about-btn">
+                    <span class="about-icon"></span>
+                    <span class="about-text">About this App</span>
+                </a>
+                <img class="wizard-img" src="images/wizard-1456914_640.png" alt="a wizard reading a scroll">
+            </section>
+            <section class="sidebar-footer">
+                <span class="author-span"><a class="author" href="https://github.com/mustafa-digital">Made by mustafa-digital</a></span>
+                <span><a href="https://github.com/mustafa-digital"><img class="github-logo" src="images/github.svg" alt="github link to mustafa-digital profile"></a></span>
+            </section>
+        </section>
+        <section class="main">
+        </section>
+    </div> 
+</body>
+</html>

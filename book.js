@@ -34,19 +34,29 @@ let hobbit = new Book("The Hobbit", "JRR Tolkien", 295, false);
 
 const openBtn = document.querySelector(".add-book-btn");
 const closeBtn = document.querySelector(".close-btn");
+const modal = document.querySelector(".modal");
+
 const popup = document.querySelector(".add-book-popup");
 const mainPopup = document.querySelector(".add-book-popup-main");
 
 openBtn.addEventListener("click", () => {
-    popup.style.display = "flex";
-    popup.style.cssText = "animation: slide-in 0.5s ease; animation-fill-mode: forwards;"
-    mainPopup.style.cssText = "animation: slide-in 0.5s ease; animation-fill-mode: forwards;"
+    modal.style.display = "flex";
+
+
+
+    // popup.style.display = "flex";
+    // popup.style.cssText = "animation: slide-in 0.5s ease; animation-fill-mode: forwards;"
+    // mainPopup.style.cssText = "animation: slide-in 0.5s ease; animation-fill-mode: forwards;"
 });
 
 closeBtn.addEventListener("click", () => {
-    popup.style.display = "none";
-    popup.style.cssText = "animation: slide-out 0.5s ease; animation-fill-mode: forwards;"
-    mainPopup.style.cssText = "animation: slide-out 0.5s ease; animation-fill-mode: forwards;"
+    modal.style.display = "none";
+
+
+
+    // popup.style.display = "none";
+    // popup.style.cssText = "animation: slide-out 0.5s ease; animation-fill-mode: forwards;"
+    // mainPopup.style.cssText = "animation: slide-out 0.5s ease; animation-fill-mode: forwards;"
 });
 
 

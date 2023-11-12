@@ -9,7 +9,81 @@
 </head>
 <body>
     <div class="container">
-        <section class="sidebar">
+
+        <section class="header">
+            <div class="logo">
+                <!-- <img class="logo-img" src="images/quill-pen-4295517_640.png" alt="book logo"> -->
+                <h1 class="logo-title">Library App</h1>
+            </div>
+            <div class="buttons">
+                <a class="add-book-btn">
+                    <span class="add-book-icon"></span>
+                    <span class="add-book-text">Add a New Book</span>
+                </a>
+                <a class="stats-btn">
+                    <span class="stats-icon"></span>
+                    <span class="stats-text">My Reading Stats</span>
+                </a>
+                <a class="about-btn">
+                    <span class="about-icon"></span>
+                    <span class="about-text">About this App</span>
+                </a>
+            </div>
+
+        </section>
+        <section class="main">
+    
+        </section>
+        <section class="footer">
+            <span class="author-span"><a class="author" href="https://github.com/mustafa-digital">Made by mustafa-digital</a></span>
+            <span><a href="https://github.com/mustafa-digital"><img class="github-logo" src="images/github.svg" alt="github link to mustafa-digital profile"></a></span>
+        </section>
+
+        <div class="modal">
+            <div class="add-book-modal">
+                <span class="close-btn">&times;</span>
+                <form action="" method="post">
+                    <p>
+                        <label for="title">Title</label>
+                        <input type="text"
+                               id="title"
+                               name="title"
+                               required />
+                        <span></span>
+                    </p>
+
+                    <p>
+                        <label for="author">Author</label>
+                        <input type="text"
+                               id="author"
+                               name="author"
+                               required />
+                        <span></span>
+                    </p>
+
+                    <p>
+                        <label for="pages">Pages</label>
+                        <input type="number"
+                               id="pages"
+                               name="pages"
+                               required />
+                        <span></span>
+                    </p>
+
+                    <p class="checkbox-input">
+                        <label for="read">Have you read it?</label>
+                        <input type="checkbox"
+                               id="read"
+                               name="read" />
+                        <span></span>
+                    </p>
+
+                    <button type="submit">Add to Library</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- <section class="sidebar">
             <section class="sidebar-header">
                 <img class="logo-img" src="images/book-2028193.svg" alt="book logo">
                 <h1 class="logo-title">Library</h1>
@@ -82,7 +156,7 @@
             </section>
         </section>
         <section class="main">
-        </section>
+        </section> -->
     </div> 
 </body>
 </html>

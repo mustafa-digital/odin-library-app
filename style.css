@@ -6,8 +6,8 @@
 }
 
 @font-face {
-    font-family: "calligraphy";
-    src: url(fonts/CalligraphyFLF.ttf);
+    font-family: "alexandria";
+    src: url(fonts/AlexandriaFLF.ttf);
 }
 
 :root {
@@ -36,11 +36,14 @@ body {
 .container {
     height: 100%;
     display: grid;
-    grid-template-rows: 75px 1fr 40px;
+    grid-template-rows: 80px 1fr 40px;
     grid-template-columns: 100vw;
 }
 
 .header {
+    width: 100%;
+    position: fixed;
+
     grid-area: 1 / 1 / 2 / -1;
     background-color: #fafafa;
     display: grid;
@@ -48,6 +51,9 @@ body {
     justify-content: start;
     align-items: center;
     padding: 5px 10px;
+    z-index: 1;
+
+    box-shadow: 2px 2px 8px 2px #93979c;
 }
 
 .logo {
@@ -59,9 +65,10 @@ body {
 }
 
 .logo-title {
-    font-family: calligraphy;
+    font-family: alexandria, sans-serif;
     font-size: 2rem;
     color: var(--title-color);
+    text-shadow: 4px 4px #e2e8f0;
 }
 
 .logo-img {
@@ -117,9 +124,12 @@ body {
 
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4);
+
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
 }
 
-.add-book-modal {
+.modal-card {
     height: 400px;
     position: relative;
     top: 100px;
@@ -129,6 +139,9 @@ body {
 
     border-radius: 20px;
     box-shadow: 5px 5px 5px #343434;
+
+    animation-name: slideIn;
+    animation-duration: 0.6s;
 }
 
 .close-btn {
@@ -146,20 +159,24 @@ body {
     border-radius: 20px;
     text-align: center;
     cursor: pointer;
-
 }
 
-.add-book-modal > form {
+.modal-card > form {
    height: 95%;
    display: grid;
    grid-template-rows: repeat(autofit, minmax(50px, 1fr));
 }
 
-.add-book-modal > form > p:not(.checkbox-input) {
+.modal-card > form > p:not(.checkbox-input) {
    display: grid;
    grid-template-rows: 1fr 1fr;
-   gap: 0px;
    align-items: end;
+}
+
+input:not(.checkbox-input) {
+    position: relative;
+    top: -5px;
+    z-index: 1;
 }
 
 .checkbox-input {
@@ -177,6 +194,16 @@ button[type="submit"] {
 input[type="checkbox"] {
     height: 20px;
     width: 20px;
+}
+
+@keyframes fadeIn {
+    from{opacity: 0}
+    to{opacity: 1}
+}
+
+@keyframes slideIn {
+    from{top:-100px}
+    to{top:100px}
 }
 
 /*

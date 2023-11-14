@@ -13,7 +13,7 @@
         <section class="header">
             <div class="logo">
                 <!-- <img class="logo-img" src="images/quill-pen-4295517_640.png" alt="book logo"> -->
-                <h1 class="logo-title">Library App</h1>
+                <h1 class="logo-title">The Library</h1>
             </div>
             <div class="buttons">
                 <a class="add-book-btn">
@@ -39,10 +39,10 @@
             <span><a href="https://github.com/mustafa-digital"><img class="github-logo" src="images/github.svg" alt="github link to mustafa-digital profile"></a></span>
         </section>
 
-        <div class="modal">
-            <div class="add-book-modal">
-                <span class="close-btn">&times;</span>
-                <form action="" method="post">
+        <div class="modal add-book">
+            <div class="modal-card">
+                <span class="close-btn close-add-book">&times;</span>
+                <form id="add-book-form" action="" method="post">
                     <p>
                         <label for="title">Title</label>
                         <input type="text"
@@ -80,6 +80,27 @@
 
                     <button type="submit">Add to Library</button>
                 </form>
+            </div>
+        </div>
+
+        <div class="modal stats">
+            <div class="modal-card">
+                <span class="close-btn close-stats">&times;</span>
+                <h1>Your Stats</h1>
+                <h2>Books read</h2>
+                <h2>Pages read</h2>
+                <h2>Total books</h2>
+                <h2>Books waiting to be read</h2>
+            </div>
+        </div>
+
+        <div class="modal about">
+            <div class="modal-card">
+                <span class="close-btn close-about">&times;</span>
+                <h1>About this App</h1>
+                <p>
+                    This webpage allows you to store your favourite books as a sort of personal library.
+                </p>
             </div>
         </div>
 

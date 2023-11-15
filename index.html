@@ -68,13 +68,24 @@
                                name="pages"
                                required />
                         <span></span>
+
+                    </p>
+                        <label for="image">Url of image cover (optional)</label>
+                        <input type="url"
+                            id="image"
+                            name="image" 
+                            pattern="(https?:\/\/.*\.(?:png|jpg))" />
+                        <span></span>
+                    <p>
+
                     </p>
 
                     <p class="checkbox-input">
                         <label for="read">Have you read it?</label>
                         <input type="checkbox"
                                id="read"
-                               name="read" />
+                               name="read"
+                               value="read" />
                         <span></span>
                     </p>
 

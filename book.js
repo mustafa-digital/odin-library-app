@@ -79,6 +79,15 @@ function Book(title, author, pages, img, read) {
     }
 }
 
+Book.prototype.toggleRead = function () {
+    if (this.read) {
+        this.read = false;
+    }
+    else {
+        this.read= true;
+    }
+}
+
 function addBookToLibrary(book) {
 
     myLibrary.push(book);
@@ -218,17 +227,13 @@ function createBookCards() {
                 readButton.removeAttribute("class", "read");
                 readButton.setAttribute("class", "not-read");
                 readButton.textContent="Not read yet";
-
-                myLibrary[e.target.parentElement.dataset.index].read = false;
             }
             else {
                 readButton.removeAttribute("class", "not-read");
                 readButton.setAttribute("class", "read");
                 readButton.textContent="Read";
-
-                myLibrary[e.target.parentElement.dataset.index].read = true;
-
             }
+            myLibrary[e.target.parentElement.dataset.index].toggleRead();
         });
         
         bookCardDiv.appendChild(deleteBookButton);

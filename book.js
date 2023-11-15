@@ -139,6 +139,13 @@ form.addEventListener("submit", function(e) {
     e.preventDefault(); // prevent form submission from refreshing page
 });
 
+function deleteBook(bookIndex) {
+    console.log(bookIndex);
+    console.log(myLibrary);
+    myLibrary.splice(bookIndex, 1);
+    console.log(myLibrary);
+}
+
 function createBookCards() {
     let index = 0;
     myLibrary.forEach(book => {
@@ -146,6 +153,36 @@ function createBookCards() {
         const bookCardDiv = document.createElement("div");
         bookCardDiv.setAttribute("class", "book-card");
         bookCardDiv.setAttribute("data-index", `${index}`)
+
+        const deleteBookButton = document.createElement("span");
+        deleteBookButton.setAttribute("class", "delete-book-btn");
+        deleteBookButton.setAttribute("title", "Delete");
+
+        deleteBookButton.addEventListener("click", (bookCardDeleteEvent) => {
+            const deleteBookModal = document.querySelector(".delete-book-modal");
+            const warningBook = document.querySelector(".book-title-warning");
+            warningBook.textContent = `${book.title}?`;
+
+            const deleteBookCancel = document.querySelector(".delete-book-cancel");
+            deleteBookCancel.addEventListener("click", () => {
+                deleteBookModal.close();
+                bookCardDeleteEvent = null;
+
+                warningBook.textContent = "";
+            });
+
+            const deleteBookConfirm = document.querySelector(".delete-book-confirm");
+            deleteBookConfirm.addEventListener("click", () => {
+                deleteBook(bookCardDeleteEvent.target.parentElement.dataset.index);
+                deleteBookModal.close();
+                main.textContent = "";
+                bookCardDeleteEvent = null;
+
+                createBookCards();
+            });
+            
+            deleteBookModal.showModal();
+        });
 
         const titleHeader = document.createElement("h2");
         titleHeader.textContent = book.title;
@@ -183,8 +220,6 @@ function createBookCards() {
                 readButton.textContent="Not read yet";
 
                 myLibrary[e.target.parentElement.dataset.index].read = false;
-
-
             }
             else {
                 readButton.removeAttribute("class", "not-read");
@@ -196,7 +231,7 @@ function createBookCards() {
             }
         });
         
-
+        bookCardDiv.appendChild(deleteBookButton);
         bookCardDiv.appendChild(titleHeader);
         bookCardDiv.appendChild(authorHeader);
         bookCardDiv.appendChild(bookImage);

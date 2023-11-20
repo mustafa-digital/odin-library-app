@@ -60,14 +60,17 @@ Library array functions go here
 
 const myLibrary = [];
 
-function Book(title, author, pages, img, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.img = img;
-    this.read = read;
+class Book {
 
-    this.info = function() {
+    constructor(title, author, pages, img, read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.img = img;
+        this.read = read;
+    }
+
+    info() {
         let readString = "";
         if (read) {
             readString = "read";
@@ -77,14 +80,14 @@ function Book(title, author, pages, img, read) {
         }
         return `${this.title} by ${this.author}, ${pages}, ${readString}`;
     }
-}
 
-Book.prototype.toggleRead = function () {
-    if (this.read) {
-        this.read = false;
-    }
-    else {
-        this.read= true;
+    toggleRead() {
+        if (this.read) {
+            this.read = false;
+        }
+        else {
+            this.read= true;
+        }
     }
 }
 
@@ -149,10 +152,7 @@ form.addEventListener("submit", function(e) {
 });
 
 function deleteBook(bookIndex) {
-    console.log(bookIndex);
-    console.log(myLibrary);
     myLibrary.splice(bookIndex, 1);
-    console.log(myLibrary);
 }
 
 function createBookCards() {
